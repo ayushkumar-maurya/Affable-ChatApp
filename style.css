@@ -1,0 +1,14 @@
+.alert {
+	padding: 5px;
+	width: 70%;
+}
+
+.alert-success {
+	margin-left: auto; 
+	margin-right: 0;
+}
+
+.date-time {
+	font-size: 0.8rem;
+	color: #343a40;
+}
