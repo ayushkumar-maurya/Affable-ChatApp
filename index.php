@@ -60,6 +60,9 @@ include "connection.php";
 					<br><br>
 					<input type="file" name="attachedFile" id="attachedFile">
 					<input type="button" id="clr-msgs" value="Clear Chats">
+					<br><br>
+					<input type="button" id="export-chat" value="Export Chat">
+					<a href="" id="exportLink" style="display: none;" download></a>
 				</form>
 			</center>
 			<br>

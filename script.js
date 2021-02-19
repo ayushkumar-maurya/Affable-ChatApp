@@ -77,6 +77,7 @@ function chat(userid, user) {
 
 	document.getElementById("send-msg").setAttribute("onclick", "sendMsg('"+ userid +"')");
 	document.getElementById("clr-msgs").setAttribute("onclick", "clearChats('"+ userid +"', '" + user + "')");
+	document.getElementById("export-chat").setAttribute("onclick", "exportChat('"+ userid +"', '" + user + "')");
 
 	$('#chatModal').modal('show');
 }
@@ -116,6 +117,18 @@ function confirmClearChats(userid, user) {
 		success: function() {
 			chat(userid, user);
 			document.getElementById('close-clr-modal').click();
+		}
+	});
+}
+
+function exportChat(userid, user) {
+	$.ajax({
+		url: "export_chat.php",
+		method: "POST",
+		data: {do:"export", userid:userid, user:user},
+		success: function(filename) {
+			exportLink.href = "export_chat/" + filename;
+			document.getElementById('exportLink').click();
 		}
 	});
 }
